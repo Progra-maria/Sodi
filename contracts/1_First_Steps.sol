@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-//Vesrion
+//Version
 pragma solidity ^0.8.4;
 
 //Imports an star contract from Openzeppelin
