@@ -42,8 +42,32 @@ contract ControlStructures {
         return (len);
     }
 
+
     function getLen() public view returns (uint){
+
         return (len);
+    }
+
+
+    function calculator(string memory operation, uint a, uint b) public pure returns (uint){
+
+        bytes32 hash_operator = keccak256(abi.encodePacked(operation));
+
+        if (hash_operator == keccak256(abi.encodePacked("+"))){
+            return ( a + b);
+        }else if (hash_operator == keccak256(abi.encodePacked("-"))){
+            return (a - b);
+        }else if (hash_operator == keccak256(abi.encodePacked("x"))){
+            return (a * b);
+        }else if (hash_operator == keccak256(abi.encodePacked("/"))){
+            if (b == 0){
+                return 0;
+            } else
+            return (a / b);
+        }else if (hash_operator == keccak256(abi.encodePacked("^"))){
+            return (a ** b);
+        }else
+        return 0;
     }
 
 }
